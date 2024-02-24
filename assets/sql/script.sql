@@ -15,9 +15,11 @@ CREATE TABLE mouvement(
     FOREIGN KEY (id_cat) REFERENCES categorie(id_cat)
 );
 
-INSERT INTO categorie(nom) VALUES
-    ('transport'),
-    ('nourriture');
+CREATE TABLE login (
+    id_log int primary key auto_increment,
+    email varchar(30),
+    mdp varchar(10)
+);
 
-INSERT INTO mouvement(prix, date, description) VALUES
-    (2000,'2024-02-01','Frais de deplacement'); 
+INSERT INTO login VALUES
+(1, 'frederic@gmail.com', '12345');
