@@ -17,12 +17,16 @@
         <div class="tab-mouv">
             <table border="1">
                 <tr>
-                    <td>N°</td>
-                    <td>Prix</td>
+                    <th>Date</th>
+                    <th>Categorie</th>
+                    <th>Prix</th>
+                    <th>Description</th>
                 </tr>
                 <tr>
-                    <th></th>
-                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
