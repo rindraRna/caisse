@@ -18,27 +18,11 @@
     function ajoutMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("UPDATE mouvement SET prix=?, description=?, date=? ,WHERE id=?");
+            $stmt = $conn -> prepare("UPDATE postes SET prix=?, description=?, date=? ,WHERE id=?");
             $stmt -> bindParam(1, $id);
             $stmt -> bindParam(2, $prix);
             $stmt -> bindParam(3, $description);
             $stmt -> bindParam(4, $date);
-            $stmt -> execute();
-        }
-        catch(PDOException $e){
-            echo "Erreur : " . $e -> getMessage();
-        }
-        finally{
-            if($stmt != null){
-                $stmt -> closeCursor();
-            }
-        }
-    }
-
-    function listeMouv($id, $prix, $date, $description){
-        try{
-            $conn = connexion();
-            $stmt = $conn -> prepare("SELECT * from mouvement WHERE id=?");
             $stmt -> execute();
         }
         catch(PDOException $e){

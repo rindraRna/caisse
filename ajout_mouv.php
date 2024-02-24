@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="add-mouv">
-        <form action="" method="POST">
+        <form action="#" method="POST">
             <div class="categories">
                 <select name="" id="">
                     <option value="">Transport</option>
@@ -16,13 +16,10 @@
                 </select>
             </div>
             <div class="prix">
-                <input type="number" name="prix" placeholder="Prix">
-            </div>
-            <div class="description">
-                <input type="text" name="description" placeholder="Description">
+                <input type="number" placeholder="Prix">
             </div>
             <div class="date">
-                <input type="date" name="date" placeholder="Date">
+                <input type="date" placeholder="Date">
             </div>
 
             <button type="submit">Ajouter</button>
