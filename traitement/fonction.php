@@ -15,7 +15,7 @@
         }
     }
 
-    function ajoutMouv($id, $prix, $date, $description){
+    /*function ajoutMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();
             $stmt = $conn -> prepare("UPDATE mouvement SET prix=?, description=?, date=? ,WHERE id=?");
@@ -49,7 +49,7 @@
                 $stmt -> closeCursor();
             }
         }
-    }
+    }*/
 
     // function getUser(){
     //     try{
