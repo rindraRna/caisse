@@ -14,10 +14,9 @@
 
 </head>
 <body>
+    <?php include("./layout/navbar.php") ?>
 
-    <?php include("./link/navbar.php") ?>
-
-    <H1>PAGE CATEGORIES</H1>
+    <h1>PAGE CATEGORIES</h1>
     <div class="categorie">
        
 
