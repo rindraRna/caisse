@@ -14,3 +14,10 @@ CREATE TABLE mouvement(
     description varchar(255),
     FOREIGN KEY (id_cat) REFERENCES categorie(id_cat)
 );
+
+INSERT INTO categorie(nom) VALUES
+    ('transport'),
+    ('nourriture');
+
+INSERT INTO mouvement(prix, date, description) VALUES
+    (2000,'2024-02-01','Frais de deplacement'); 
