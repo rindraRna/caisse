@@ -14,7 +14,7 @@
 
 </head>
 <body>
-    <?php include("./link/navbar.php") ?>
+    <?php include("./layout/navbar.php") ?>
 
     <div class="mouvement">
         <a href="./ajout_mouv.php" style="text-decoration: none;"><button type="button" class="btn btn-outline-primary">Ajouter un mouvement</button></a>

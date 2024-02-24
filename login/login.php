@@ -1,8 +1,8 @@
-
 <?php
     include("../traitement/fonction.php");
     connexion();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
