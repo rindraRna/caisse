@@ -17,15 +17,18 @@
     <input type="email" name="mail" placeholder="Votre e-mail" id="">
     <input type="password" name="mdp" placeholder="votre mot de passe " id="">
     <button type="submit" name="connexion">Se connecter</button>
-    <?php 
+
+     </div> 
+     </form>
+     <?php 
             if(isset($erreur)) 
             {
                 echo '<font color="red">'.$erreur."</font>";
             }
 
         ?>
-    </div>
-    </form>
+   
+   
 </body>
 </html>
 
