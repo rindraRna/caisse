@@ -1,4 +1,4 @@
-<?php
+ <?php
     include("./traitement/fonction.php");
     connexion();
 ?>

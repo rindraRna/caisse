@@ -11,12 +11,21 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="connexion.php" method="post">
     <div class="log">
     <h1>Login</h1>
-    <input type="email" name="" id="">
-    <input type="password" name="" id="">
-    <button type="submit">Se connecter</button>
+    <input type="email" name="mail" id="">
+    <input type="password" name="mdp" id="">
+    <button type="submit" name="connexion">Se connecter</button>
+    <?php 
+            if(isset($erreur)) 
+            {
+                echo '<font color="red">'.$erreur."</font>";
+            }
+
+        ?>
     </div>
+    </form>
 </body>
 </html>
 
