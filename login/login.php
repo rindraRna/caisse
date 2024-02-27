@@ -14,8 +14,8 @@
     <form action="connexion.php" method="post">
     <div class="log">
     <h1>Login</h1>
-    <input type="email" name="mail" id="">
-    <input type="password" name="mdp" id="">
+    <input type="email" name="mail" placeholder="Votre e-mail" id="">
+    <input type="password" name="mdp" placeholder="votre mot de passe " id="">
     <button type="submit" name="connexion">Se connecter</button>
     <?php 
             if(isset($erreur)) 
