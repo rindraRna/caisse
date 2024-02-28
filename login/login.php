@@ -20,14 +20,7 @@
 
      </div> 
      </form>
-     <?php 
-            if(isset($erreur)) 
-            {
-                echo '<font color="red">'.$erreur."</font>";
-            }
-
-        ?>
-   
+    
    
 </body>
 </html>

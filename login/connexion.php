@@ -18,12 +18,17 @@ if (isset($_POST['connexion']))
             header('Location: ../index.php');
         }else {
             $erreur =' Misy diso ';
+            header('Location: ./erreur.php');
         }
     }else {
         $erreur = 'Fenoy daholo ireo Case ';
+        echo '<font color="red">'.$erreur."</font>";
+        header('Location: ./erreur.php');
     }
 }
 
-?>                     
+?>
+ 
+                        
       
       
