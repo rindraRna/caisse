@@ -12,39 +12,26 @@ connexion();
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Document</title>
 </head>
-<style>
-    body{
-        text-align: center;
-    }
-    .container{
-        width: 340px;
-        height: 50px auto;
-        text-align: center;
-        padding-top: 100px;
-    }
-    .container form {
-        margin-bottom: 15px;
-        background: #f7f7f7;
-        box-shadow: 0px 2px 2px rgb( 0, 0, 0, 0.3);
-        padding: 30px;
-    }
-    .container h1 {
-        margin: 0 0 15px;
-    }
-    .form-control {
-        min-height: 38px;
-        border-radius: 2px;
-    }
-    .btn {
-        font-size: 15px;
-        font-weight: bold;
-    }
 
-</style>
 <body>
 
     <div class="container">
+
         <form action="connexion.php" method="post">
+            <?php
+            if (isset($_GET['login_err'])) {
+                $erreur = ($_GET['login_err']);
+                switch ($erreur) {
+                    case 'mdpF':
+            ?>
+                        <div class="alert alert-danger">
+                            <strong>Erreur</strong> mot de passe incorect
+                        </div>
+            <?php
+                        break;
+                }
+            }
+            ?>
             <h1 class="text-center">Login</h1>
             <div class="form-group">
                 <input type="email" class="form-control" name="mail" placeholder="Votre e-mail" id="" autocomplete="off">
@@ -61,5 +48,38 @@ connexion();
 
 
 </body>
+<style>
+    body {
+        text-align: center;
+    }
+
+    .container {
+        width: 340px;
+        height: 50px auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .container form {
+        margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgb(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+
+    .container h1 {
+        margin: 0 0 15px;
+    }
+
+    .form-control {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
 
 </html>

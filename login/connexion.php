@@ -16,10 +16,7 @@ if (isset($_POST['connexion']))
             $_SESSION['mail'] = $userinfo['mail'];
             
             header('Location: ../index.php');
-        }else {
-            $erreur =' Misy diso ';
-            header('Location: ./erreur.php');
-        }
+        }else header('Location: ./login.php?login_err=mdpF');
     }
 }
 
