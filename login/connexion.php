@@ -20,10 +20,6 @@ if (isset($_POST['connexion']))
             $erreur =' Misy diso ';
             header('Location: ./erreur.php');
         }
-    }else {
-        $erreur = 'Fenoy daholo ireo Case ';
-        echo '<font color="red">'.$erreur."</font>";
-        header('Location: ./erreur.php');
     }
 }
 
