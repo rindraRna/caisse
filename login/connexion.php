@@ -1,6 +1,6 @@
 <?php 
  include("../traitement/fonction.php");
- connexion();
+//  connexion();
 $conn= connexion();
 if (isset($_POST['connexion'])) 
 {
