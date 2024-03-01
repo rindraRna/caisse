@@ -1,3 +1,7 @@
+<?php
+    include("./traitement/fonction.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,7 @@
 </head>
 <body>
     <div class="add-mouv">
-        <form action="" method="POST">
+        <form action="traitement/t_mouv.php" method="POST">
             <div class="categories">
                 <select name="" id="">
                     <option value="">Transport</option>

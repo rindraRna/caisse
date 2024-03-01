@@ -1,5 +1,6 @@
 <?php
     include("./traitement/fonction.php");
+    $mouvements = listeMouv();
 ?>
 
 <!DOCTYPE html>
@@ -27,12 +28,18 @@
                     <th>Prix</th>
                     <th>Description</th>
                 </tr>
+                <?php
+                    foreach($mouvements as $mouvement){
+                ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $mouvement["date"] ?></td>
+                    <td>categorie</td>
+                    <td><?php echo $mouvement["prix"] ?></td>
+                    <td><?php echo $mouvement["description"] ?></td>
                 </tr>
+                <?php 
+                    }
+                ?>
             </table>
         </div>
     </div>

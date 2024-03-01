@@ -15,14 +15,13 @@
         }
     }
 
-    /*function ajoutMouv($id, $prix, $date, $description){
+    function ajoutMouv($prix,$description,$date){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("UPDATE mouvement SET prix=?, description=?, date=? ,WHERE id=?");
-            $stmt -> bindParam(1, $id);
-            $stmt -> bindParam(2, $prix);
-            $stmt -> bindParam(3, $description);
-            $stmt -> bindParam(4, $date);
+            $stmt = $conn -> prepare("INSERT INTO mouvement(prix,description,date) VALUES(?,?,?)");
+            $stmt -> bindParam(1, $prix);
+            $stmt -> bindParam(2, $description);
+            $stmt -> bindParam(3, $date);
             $stmt -> execute();
         }
         catch(PDOException $e){
@@ -35,11 +34,19 @@
         }
     }
 
-    function listeMouv($id, $prix, $date, $description){
+    function listeMouv(){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("SELECT * from mouvement WHERE id=?");
+            $stmt = $conn -> prepare("SELECT * from mouvement");
             $stmt -> execute();
+            while($result = $stmt->fetch(PDO::FETCH_OBJ)){
+                $data[] = [
+                    'prix'=> $result->prix,
+                    'description'=> $result->description,
+                    'date'=> $result->date,
+                ];
+            }
+            return $data;
         }
         catch(PDOException $e){
             echo "Erreur : " . $e -> getMessage();
@@ -49,7 +56,7 @@
                 $stmt -> closeCursor();
             }
         }
-    }*/
+    }
 
     // function getUser(){
     //     try{
