@@ -15,14 +15,11 @@
         }
     }
 
-    /*function ajoutMouv($id, $prix, $date, $description){
+    function ajoutCat($nom){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("UPDATE mouvement SET prix=?, description=?, date=? ,WHERE id=?");
-            $stmt -> bindParam(1, $id);
-            $stmt -> bindParam(2, $prix);
-            $stmt -> bindParam(3, $description);
-            $stmt -> bindParam(4, $date);
+            $stmt = $conn -> prepare("INSERT INTO  categorie(nom) VALUES (?)");
+            $stmt -> bindParam(1, $nom);
             $stmt -> execute();
         }
         catch(PDOException $e){
@@ -35,7 +32,7 @@
         }
     }
 
-    function listeMouv($id, $prix, $date, $description){
+    /*function listeMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();
             $stmt = $conn -> prepare("SELECT * from mouvement WHERE id=?");
