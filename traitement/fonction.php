@@ -15,6 +15,30 @@
         }
     }
 
+    function getMonth($month){
+        try{
+            $conn = connexion();
+            $stmt = $conn -> prepare("SELECT COUNT(*) AS month FROM mouvement WHERE month(date)=?");
+            $stmt -> bindParam(1, $month);
+            $stmt -> execute();
+            $data = [];
+            while($result = $stmt -> fetch(PDO::FETCH_OBJ)){
+                $data = [
+                    "month" => $result -> month,
+                ];
+            }
+            return $data;
+        }
+        catch(PDOException $e){
+            echo "Erreur : " . $e -> getMessage();
+        }
+        finally{
+            if($stmt != null){
+                $stmt -> closeCursor();
+            }
+        }
+        }
+
     /*function ajoutMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();

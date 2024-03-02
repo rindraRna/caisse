@@ -10,3 +10,8 @@
 .form-inline input {
     margin-right: 15px;
 }
+
+.home .chart {
+    margin: 200px;
+    background: aliceblue;
+}
