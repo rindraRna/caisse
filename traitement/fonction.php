@@ -15,13 +15,14 @@
         }
     }
 
-    function ajoutMouv($prix,$description,$date){
+    function ajoutMouv($id_cat,$prix,$description,$date){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("INSERT INTO mouvement(prix,description,date) VALUES(?,?,?)");
-            $stmt -> bindParam(1, $prix);
-            $stmt -> bindParam(2, $description);
-            $stmt -> bindParam(3, $date);
+            $stmt = $conn -> prepare("INSERT INTO mouvement(id_cat,prix,description,date) VALUES(?,?,?,?)");
+            $stmt -> bindParam(1, $id_cat);
+            $stmt -> bindParam(2, $prix);
+            $stmt -> bindParam(3, $description);
+            $stmt -> bindParam(4, $date);
             $stmt -> execute();
         }
         catch(PDOException $e){
@@ -37,10 +38,12 @@
     function listeMouv(){
         try{
             $conn = connexion();
-            $stmt = $conn -> prepare("SELECT * from mouvement");
+            $stmt = $conn -> prepare("  SELECT categorie.nom, mouvement.prix, mouvement.description, mouvement.date from mouvement 
+                                        LEFT JOIN categorie ON mouvement.id_cat = categorie.id_cat");
             $stmt -> execute();
             while($result = $stmt->fetch(PDO::FETCH_OBJ)){
                 $data[] = [
+                    'categorie' => $result->nom,
                     'prix'=> $result->prix,
                     'description'=> $result->description,
                     'date'=> $result->date,
