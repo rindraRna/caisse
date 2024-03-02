@@ -1,31 +1,31 @@
+<?php
+    include("./traitement/fonction.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Mouvement - Ajout</title>
 </head>
 <body>
-    <div class="add-mouv">
-        <form action="" method="POST">
-            <div class="categories">
-                <select name="" id="">
-                    <option value="">Transport</option>
-                    <option value="">Nourriture</option>
-                </select>
-            </div>
-            <div class="prix">
-                <input type="number" name="prix" placeholder="Prix">
-            </div>
-            <div class="description">
-                <input type="text" name="description" placeholder="Description">
-            </div>
-            <div class="date">
-                <input type="date" name="date" placeholder="Date">
-            </div>
-
-            <button type="submit">Ajouter</button>
+    <?php include("./layout/navbar.php") ?>
+    <h1>Ajouter un mouvement</h1>
+    <div class="mt-5 col-md-6 add-mouv">
+        <form action="traitement/t_mouv.php" method="POST">
+        <select class="form-select" name="categorie" aria-label="Default select example">
+            <option selected>Categorie</option>
+            <option value="1">Transport</option>
+            <option value="2">Nourriture</option>
+        </select>
+        <input class="form-control mt-2" aria-label="default input example" type="number" name="prix" placeholder="Prix">
+        <input class="form-control mt-2" aria-label="default input example" type="text" name="description" placeholder="Description">
+        <input class="form-control mt-2 mb-2" aria-label="default input example" type="date" name="date" placeholder="Date">
+        <button type="submit" class="btn btn-success">Ajouter</button>
         </form>
     </div>
 </body>

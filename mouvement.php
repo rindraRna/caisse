@@ -1,5 +1,6 @@
 <?php
     include("./traitement/fonction.php");
+    $mouvements = listeMouv();
 ?>
 
 <!DOCTYPE html>
@@ -15,24 +16,32 @@
 </head>
 <body>
     <?php include("./layout/navbar.php") ?>
+    <h1>Liste des mouvements</h1>
+    <div class="mt-5 mouvement">
+        <a href="./ajout_mouv.php"  style="text-decoration: none;">
+        <button type="button" class="btn btn-outline-primary">Ajouter un mouvement</button>
+        </a>
 
-    <div class="mouvement">
-        <a href="./ajout_mouv.php" style="text-decoration: none;"><button type="button" class="btn btn-outline-primary">Ajouter un mouvement</button></a>
-
-        <div class="tab-mouv">
-            <table border="1">
+        <div class="mt-2 tab-mouv">
+            <table class="table table-hover" border="1">
                 <tr>
                     <th>Date</th>
                     <th>Categorie</th>
                     <th>Prix</th>
                     <th>Description</th>
                 </tr>
+                <?php
+                    foreach($mouvements as $mouvement){
+                ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $mouvement["date"] ?></td>
+                    <td><?php echo $mouvement["categorie"] ?></td>
+                    <td><?php echo $mouvement["prix"] ?></td>
+                    <td><?php echo $mouvement["description"] ?></td>
                 </tr>
+                <?php 
+                    }
+                ?>
             </table>
         </div>
     </div>
