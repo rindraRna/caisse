@@ -76,19 +76,44 @@
         }
     }
 
+    
     function listeMouv(){
-    /*function listeMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();
             $stmt = $conn -> prepare("  SELECT categorie.nom, mouvement.prix, mouvement.description, mouvement.date from mouvement 
                                         LEFT JOIN categorie ON mouvement.id_cat = categorie.id_cat");
             $stmt -> execute();
+            $data= [];
             while($result = $stmt->fetch(PDO::FETCH_OBJ)){
                 $data[] = [
                     'categorie' => $result->nom,
                     'prix'=> $result->prix,
                     'description'=> $result->description,
                     'date'=> $result->date,
+                ];
+            }
+            return $data;
+        }
+        catch(PDOException $e){
+            echo "Erreur : " . $e -> getMessage();
+        }
+        finally{
+            if($stmt != null){
+                $stmt -> closeCursor();
+            }
+        }
+    }
+
+    function listeCat(){
+        try{
+            $conn = connexion();
+            $stmt = $conn -> prepare("SELECT * from categorie");
+            $stmt -> execute();
+            $data= [];
+            while($result = $stmt->fetch(PDO::FETCH_OBJ)){
+                $data[] = [
+                    'id' => $result->id_cat,
+                    'nom'=> $result->nom,
                 ];
             }
             return $data;
@@ -110,6 +135,7 @@
             $stmt -> bindParam(1, $mail);
             $stmt -> bindParam(2, $mdp);
             $stmt -> execute();
+            $data = [];
             while($result = $stmt -> fetch(PDO::FETCH_OBJ)){
                 $data[] = [
                     "mail" => $result -> email,
@@ -153,5 +179,5 @@
     //             $stmt -> closeCursor();
     //         }
     //     }
-    // }
+    // } 
 ?>

@@ -1,5 +1,6 @@
 <?php
     include("./traitement/fonction.php");
+    $listCat = listeCat();
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +19,13 @@
     <div class="mt-5 col-md-6 add-mouv">
         <form action="traitement/t_mouv.php" method="POST">
         <select class="form-select" name="categorie" aria-label="Default select example">
-            <option selected>Categorie</option>
-            <option value="1">Transport</option>
-            <option value="2">Nourriture</option>
+            <?php
+                foreach($listCat as $cat){
+            ?>   
+                <option value="<?= $cat["id"] ?>"><?= $cat["nom"] ?></option>
+            <?php     
+                }
+            ?>
         </select>
         <input class="form-control mt-2" aria-label="default input example" type="number" name="prix" placeholder="Prix">
         <input class="form-control mt-2" aria-label="default input example" type="text" name="description" placeholder="Description">
