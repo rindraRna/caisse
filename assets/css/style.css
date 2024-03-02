@@ -10,3 +10,8 @@
 .form-inline input {
     margin-right: 15px;
 }
+
+.session { 
+    color: white;
+    margin-top: 8px;
+}

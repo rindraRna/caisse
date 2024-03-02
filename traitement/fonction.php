@@ -51,35 +51,29 @@
         }
     }*/
 
-    // function getUser(){
-    //     try{
-    //         $conn = connexion();
-    //         $stmt = $conn -> prepare("SELECT * FROM user");
-    //         $stmt -> execute();
-    //         while($result = $stmt -> fetch(PDO::FETCH_OBJ)){
-    //             $data[] = [
-    //                 "id" => $result -> id,
-    //                 "nom" => $result -> nom,
-    //                 "prenom" => $result -> prenom,
-    //                 "email" => $result -> email,
-    //                 "telephone" => $result -> telephone,
-    //                 "mdp" => $result -> mdp,
-    //                 "poste" => $result -> poste,
-    //                 "sexe" => $result -> sexe,
-    //                 "pdp" => $result -> pdp,
-    //             ];
-    //         }
-    //         return $data;
-    //     }
-    //     catch(PDOException $e){
-    //         echo "Erreur : " . $e -> getMessage();
-    //     }
-    //     finally{
-    //         if($stmt != null){
-    //             $stmt -> closeCursor();
-    //         }
-    //     }
-    // }
+    function login($mail, $mdp){
+        try{
+            $conn = connexion();
+            $stmt = $conn -> prepare("SELECT email FROM login WHERE email = ? AND mdp = ?");
+            $stmt -> bindParam(1, $mail);
+            $stmt -> bindParam(2, $mdp);
+            $stmt -> execute();
+            while($result = $stmt -> fetch(PDO::FETCH_OBJ)){
+                $data[] = [
+                    "mail" => $result -> email,
+                ];
+            }
+            return $data;
+        }
+        catch(PDOException $e){
+            echo "Erreur : " . $e -> getMessage();
+        }
+        finally{
+            if($stmt != null){
+                $stmt -> closeCursor();
+            }
+        }
+    }
 
     // function getInfo($username, $mdp){
     //     try{

@@ -17,7 +17,7 @@ connexion();
 
     <div class="container">
 
-        <form action="connexion.php" method="post">
+        <form action="../traitement/connexion.php" method="post">
             <?php
             if (isset($_GET['login_err'])) {
                 $erreur = ($_GET['login_err']);
@@ -32,7 +32,7 @@ connexion();
                 }
             }
             ?>
-            <h1 class="text-center">Login</h1>
+            <h2 class="text-center">Login</h2>
             <div class="form-group">
                 <input type="email" class="form-control" name="mail" placeholder="Votre e-mail" id="" autocomplete="off">
             </div>
@@ -67,8 +67,8 @@ connexion();
         padding: 30px;
     }
 
-    .container h1 {
-        margin: 0 0 15px;
+    .container h2 {
+        margin: 0 0 30px 0;        
     }
 
     .form-control {
@@ -77,6 +77,7 @@ connexion();
     }
 
     .btn {
+        width: 250px ;
         font-size: 15px;
         font-weight: bold;
     }
