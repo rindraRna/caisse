@@ -57,9 +57,27 @@
                 $stmt -> closeCursor();
             }
         }
+    }       
+    
+    function ajoutCat($nom){
+        try{
+            $conn = connexion();
+            $stmt = $conn -> prepare("INSERT INTO  categorie(nom) VALUES (?)");
+            $stmt -> bindParam(1, $nom);
+            $stmt -> execute();
+        }
+        catch(PDOException $e){
+            echo "Erreur : " . $e -> getMessage();
+        }
+        finally{
+            if($stmt != null){
+                $stmt -> closeCursor();
+            }
+        }
     }
 
     function listeMouv(){
+    /*function listeMouv($id, $prix, $date, $description){
         try{
             $conn = connexion();
             $stmt = $conn -> prepare("  SELECT categorie.nom, mouvement.prix, mouvement.description, mouvement.date from mouvement 

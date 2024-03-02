@@ -11,28 +11,24 @@
     <title>Catégories</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/stylepicka.css">
 
 </head>
 <body>
     <?php include("./layout/navbar.php") ?>
 
-    <h1>PAGE CATEGORIES</h1>
-    <div class="categorie">
-       
+    <h3> Page Categories </h3>
 
-        <table>
-            <tr>
-                <th>Nouriture</th>
-                <th>Transport</th>
-            </tr>
-            <tr>
-                <td> </td>
-                <td> </td>
+    <section class="input_add">
+        <form action="./traitement/traite_cat.php" method="POST" >
+            <label >Categories: </label>
+            <input type="text" name="nom" id="">
+            <input type="submit" value="Ajouter">
+            
+        </form>
+     </section>
 
-            </tr>
-        </table>
 
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
